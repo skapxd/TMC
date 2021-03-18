@@ -1,0 +1,7 @@
+node_modules/
+
+src/credentials.ts
+dist/credentials.js
+
+ormconfig.json
+ormconfig-2.json

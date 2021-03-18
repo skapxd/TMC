@@ -1,0 +1,773 @@
+$primary: #020654
+$second: #055CFA
+$second-hover: #053ea8
+
+$accent: #27CAFF
+$accent-hover: #1e96be
+
+$gris: #C5C5C5
+
+$paragraph: #888888
+ 
+$white: #FFF
+$white-hover: #b4b4b4
+
+$color-auth-input: #F2F2F2
+
+$footer: #2D2D2D
+
+$font: 'Poppins'
+
+    
+*
+    margin: 0
+    padding: 0
+    text-decoration: none
+    box-sizing:  border-box
+    font-family: $font
+
+body
+    overflow-x: hidden  
+
+html 
+    scroll-behavior: smooth
+
+input,
+button
+    border: 0.1vw solid #fff0
+    &:focus
+        outline: none
+
+
+.col
+    display: flex
+    flex-direction: column
+
+.row
+    display: flex
+    flex-direction: row
+
+.stack
+    position: relative
+
+
+// Mobile
+@media only screen and ( max-width: 750px  )
+
+    $font-size: 4.7vw
+    
+    [Desktop]
+        display: none
+
+    
+    .Desktop
+        display: none
+
+    .btn-whatsapp 
+        display: flex
+        width:  60px
+        height: 60px
+        position: fixed
+        right:  30px
+        bottom: 30px
+        border-radius: 50%
+        text-align:center
+        z-index: 999
+        box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3)
+        
+        &__img
+            background: url(/img-2.0/Whatsapp.png); 
+            background-size: contain
+            width:  60px
+            border-radius: 50%
+            height: 60px
+            transition: all 0.3s ease
+
+    .header-mobile-row
+        height: 10vw
+        // position: fixed
+        background: $white
+        justify-content: space-between
+        align-items: center
+        padding-left: 5vw
+        z-index: 50
+        box-shadow: 3vw 3vw 6vw rgba(0, 0, 0, 0.3)
+
+        &__logo
+            height: 9vw
+
+
+        &__contacto
+            color: $white
+            height: 5vw
+            background: $accent
+            padding: 1vw 3vw
+            border-radius: 1vw
+            line-height: 1
+            font-size:( $font-size * 0.6 )
+            margin-right: 5vw
+            text-align: center
+
+        &__menu
+            color: #FFF
+            font-size: ($font-size * 5)
+            margin-right: 5vw
+
+    .Container-1
+        background: url(/img-2.0/bg-b-1-mb.png)
+        background-size: contain
+        // background-repeat: no-repeat
+        width: 100vw
+        height: 64vw
+        justify-content: center
+        font-weight: 700
+        padding-left:  20vw
+        padding-right: 20vw 
+
+        &__text-1
+            color: $accent
+            font-size: $font-size
+
+        &__text-2
+            color: $white
+            font-size: $font-size
+
+        &__text-3
+            color: $second
+            font-size: $font-size
+
+
+    .Container-2
+        align-items: center
+        padding: 0 21vw
+
+        &__row-1
+            align-items: center
+            margin-top: 3vw
+            width: 100vw
+
+            &__img
+                margin-left: 11vw
+                margin-right: 1vw
+                margin-bottom: 5vw
+                height: 2vw
+
+            &__title
+                color: $gris     
+                font-size: $font-size * 1.4
+                font-weight: 500
+                width: 40vw
+                line-height: 1
+
+        &__paragraph-1
+            margin-top: 3vw
+            font-size:( $font-size * 0.5 )
+            color: $paragraph
+            font-weight: 400
+
+        &__paragraph-2
+            margin-top: 3vw
+            font-size:( $font-size * 0.5 )
+            color: $white
+            background: $accent
+            padding: 1vw 3vw
+            font-weight: 600
+            border-radius: 3vw 0 3vw 3vw
+
+        &__row-2
+            align-items: center
+            margin-top: 3vw
+            width: 100vw
+
+            &__img
+                margin-left: 11vw
+                margin-right: 1vw
+                margin-bottom: 5vw
+                height: 2vw
+
+            &__title
+                color: $second     
+                font-size: $font-size * 1.4
+                font-weight: 500
+                width: 40vw
+                line-height: 1
+
+        &__img-1
+            width: 58vw
+
+            
+        &__img-2
+            width: 70vw
+            margin-left: -35vw
+            margin-bottom: 3vw
+
+
+    .Container-3
+        background: url(/img-2.0/bg-b3-mb.png)
+        // background-repeat: no-repeat
+        background-size: contain
+        width: 100vw
+        height: 175vw
+        align-items: center
+        padding: 0 21vw
+
+        &__row-1
+            align-items: center
+            margin-top: 7vw
+            width: 100vw
+
+            &__img
+                margin-left: 11vw
+                margin-right: 1vw
+                // margin-bottom: 5vw
+                height: 2vw
+
+            &__title
+                color: $accent
+                font-size: $font-size * 1.4
+                font-weight: 500
+                width: 40vw
+                line-height: 1
+
+        &__paragraph-1
+            margin-top: 3vw
+            font-size:( $font-size * 0.6 )
+            color: $white
+            font-weight: 400
+
+
+    .Contactanos
+        margin-top: 5vw
+        align-content: center
+        justify-content: center
+        padding: 0 21vw    
+
+        &__title
+            text-align: center
+            font-size: ($font-size * 1.6)
+            color: $primary
+
+        &__paragraph
+            text-align: center
+            font-size: $font-size * 0.55
+            color: $paragraph
+            margin-bottom: 3vw
+
+        &__form
+
+            &__input
+                font-size: $font-size * 0.55
+                border: 0.1vw solid $gris        
+                color: $paragraph        
+                padding: 2vw 3vw
+                border-radius: 5vw
+                margin: 1vw
+
+                &:focus
+                    outline: none
+
+            &__button
+                border: 0.1vw solid #fff0
+                margin: 2vw auto
+                padding: 0.5vw 2vw
+                font-size: $font-size * 0.55
+                color: $white
+                font-weight: 600
+                cursor: pointer
+                background: $accent
+                transition: background 0.3s ease 
+                border-radius: 1vw
+
+                &:hover
+                    background: $accent-hover
+
+        &__col-1
+            margin-top: 8vw
+            margin-bottom: 3vw
+            margin-left: 35vw
+            width: 40vw
+
+            &__text-1
+                color: $paragraph
+                font-size: $font-size * 0.55
+
+
+            &__text-2
+                color: $primary
+                font-size: $font-size * 0.55
+
+            &__text-3
+                color: $accent-hover
+                font-size: $font-size * 0.55
+
+
+    
+    .footer
+        background: #2d2d2d
+
+        &__title
+            color: $white
+            font-size: ($font-size * 0.7)
+            margin: auto
+            margin-top: 5vw
+
+        &__row
+            justify-content: center
+            margin-top: 3vw
+            margin-bottom: 3vw
+
+            &__social-media
+                
+                height: 6vw
+                margin: 4vw
+
+
+
+    .gracias
+        align-items: center
+        justify-content: center
+
+        &__img
+            margin-top: 10vw
+            height: 30vw
+            margin-left: -7vw
+
+
+        &__title
+            font-size: $font-size  
+            color: $primary
+
+        &__paragraph
+            font-size: ($font-size * 0.7)
+            width: 40vw
+            margin-left: 10vw
+            margin-bottom: 1vw
+
+        &__regresar
+            color: $white
+            font-size: ( $font-size * 0.6 ) 
+            font-weight: 600
+            font-family: $font
+            margin: auto
+            background: $accent
+            padding: 0.2vw 1vw
+            border-radius: 3vw
+            transition: background 0.3s ease 
+
+            &:hover
+                background: $accent-hover
+
+        &__col-2
+            margin-top: 38vw
+            // margin-bottom: 3vw
+            margin-left: 8vw
+            width: 40vw
+
+            &__text-1
+                color: $paragraph
+                font-size: $font-size * 0.7
+
+
+            &__text-2
+                color: $primary
+                font-size: $font-size * 0.7
+
+            &__text-3
+                color: $accent-hover
+                font-size: $font-size * 0.7
+
+
+// Desktop
+@media only screen and ( min-width: 751px )
+
+
+    $font-size: 2vw
+
+    [Mobile]
+        display: none
+
+    
+    .btn-whatsapp 
+        display: flex
+        width:  60px
+        height: 60px
+        // color#fff
+        position: fixed
+        right:  30px
+        bottom: 30px
+        border-radius: 50%
+        text-align:center
+        z-index: 999
+        box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3)
+        
+        &__img
+            background: url(/img-2.0/Whatsapp.png); 
+            background-size: contain
+            width:  60px
+            border-radius: 50%
+            height: 60px
+            transition: all 0.3s ease
+            mask: rgba(0, 0, 0, 1)
+
+    .header
+        height: 6vw
+        width: 100vw
+        background: $white
+        align-items: center
+        justify-content: space-between
+        box-shadow: 0px 1.1vw 0.8vw rgba(0, 0, 0, .23)
+        z-index: 100
+        position: fixed
+
+        &__marca-img
+            height: 6vw
+            margin-left: 5vw
+        
+        &__links
+            color: $primary
+            font-family: $font
+            font-size: ($font-size * 0.7)
+            font-weight: 600
+            transition: color 0.3s ease
+
+        &__links:hover
+            color: $white-hover
+
+        &__contactanos  
+            color: $white
+            font-size: ( $font-size * 0.6 ) 
+            font-weight: 600
+            font-family: $font
+            margin-right: 5vw
+            background: $accent
+            padding: 0.2vw 1vw
+            border-radius: 3vw
+            transition: background 0.3s ease 
+
+        &__contactanos:hover
+            background: $accent-hover
+
+
+    .Container-1
+        background: url(/img-2.0/bg-b-1.png)
+        background-size: contain
+        background-repeat:  no-repeat
+        width: 100vw
+        height: 38.4vw
+        padding-left: 9vw
+        justify-content: start
+        align-items: center
+
+        
+        &__logo
+            margin-top: 6vw
+            height: 20vw
+
+        
+        &__col
+            margin-top: 4vw
+            margin-left: 5vw
+            font-weight: 600
+
+            &__text-1
+                color: $accent
+                font-size: ($font-size * 1)
+
+
+            &__text-2
+                color: $white
+                font-size: ($font-size * 1)
+
+            
+            &__text-3
+                color: $second
+                font-size: ($font-size * 1)
+
+            
+            &__img
+                // height: 0.3vw
+                width: 15vw
+                margin-top: 1vw
+                margin-left: 10vw
+
+
+    .Container-2
+        padding: 0 15vw
+        margin-top: 5vw
+
+        &__title
+            font-size: ($font-size * 2)
+            line-height: 1
+            font-weight: 600
+            color: $paragraph
+
+        &__img
+            margin-left: -6vw
+            margin-top: 1vw
+            height: 10vw
+
+        &__col
+            margin-left: 12vw
+            margin-bottom: 5vw
+            align-items: center
+
+            &__paragraph-1
+                font-size: ($font-size * 0.7)
+                color: $paragraph
+                width: 33vw
+
+            
+            &__paragraph-2
+                width: 36vw
+                margin-top: 2vw
+                background: $accent
+                font-size: ($font-size * 0.7)
+                color: $white
+                padding: 0.7vw 2vw
+                border-radius: 3vw 0 3vw 3vw
+
+     
+    .Container-3
+        background: #F7F7F7
+        padding: 5vw 15vw
+
+
+        &__col-1
+            width: 30vw
+
+
+            &__title
+                font-size: ($font-size * 2)
+                line-height: 1
+                font-weight: 600
+                color: $accent-hover
+
+            &__paragraph-1
+                font-size: ($font-size * 0.7)
+                color: $paragraph
+                width: 33vw
+                margin-left: -3vw
+
+
+            &__img
+                margin-top: 2vw
+                width: 50vw
+                margin-left: -18vw
+
+        &__col-2
+            margin-left: 10vw
+            margin-top: 10vw
+
+            &__img
+                width: 30vw
+
+            
+            &__paragraph-1
+                font-size: ($font-size * 0.7)
+                color: $paragraph
+                width: 33vw
+                margin-left: -3vw
+
+
+    .Container-4
+
+        
+        background: url(/img-2.0/bg-3-8.png)
+        background-size: contain
+        width: 100vw
+        height: 53vw
+        padding: 5vw 15vw
+
+        &__col-1
+            width: 30vw
+
+            &__title
+                font-size: ($font-size * 2)
+                line-height: 1
+                font-weight: 600
+                color: $accent-hover
+                
+            &__paragraph-1
+                margin-top: 2vw
+                font-size: ($font-size * 0.7)
+                color: $white
+                width: 33vw
+                margin-left: -3vw
+
+
+        
+        &__col-2
+            margin-top: -3vw
+            width: 30vw
+            margin-left: 10vw
+
+            &__paragraph-1
+                margin-top: 2vw
+                font-size: ($font-size * 0.7)
+                color: $white
+                width: 33vw
+                margin-left: -3vw
+            
+            &__img-1
+                height: 3vw
+                margin-top: 3vw
+
+                
+            &__img-2
+                margin-top: 3vw
+                height: 32vw
+                // height: 35vw
+                width: 35vw
+
+    
+    .Contactanos
+        margin-top: 5vw
+        align-content: center
+        justify-content: center
+        padding: 0 36vw    
+
+        &__title
+            text-align: center
+            font-size: ($font-size * 2)
+            color: $primary
+
+        &__paragraph
+            text-align: start
+            font-size: $font-size * 0.8
+            color: $paragraph
+            margin-bottom: 1vw
+            // width: 35vw
+
+        &__form
+
+            &__input
+                font-size: $font-size * 0.55
+                border: 0.1vw solid $gris        
+                color: $paragraph        
+                padding: 1vw 1.5vw
+                border-radius: 5vw
+                margin: 1vw 0vw
+
+                &:focus
+                    outline: none
+
+            &__button
+                border: 0.1vw solid #fff0
+                margin: 2vw auto
+                padding: 0.5vw 2vw
+                font-size: $font-size * 0.55
+                color: $white
+                font-weight: 600
+                cursor: pointer
+                background: $accent
+                transition: background 0.3s ease 
+                border-radius: 1vw
+
+                &:hover
+                    background: $accent-hover
+
+        &__col-1
+            margin-top: 3vw
+            margin-bottom: 3vw
+            margin-left: 35vw
+            width: 40vw
+
+            &__text-1
+                color: $paragraph
+                font-size: $font-size * 0.7
+
+
+            &__text-2
+                color: $primary
+                font-size: $font-size * 0.7
+
+            &__text-3
+                color: $accent-hover
+                font-size: $font-size * 0.7
+
+
+    
+    .footer
+        background: #2d2d2d
+
+        &__title
+            color: $white
+            font-size: ($font-size * 01)
+            margin: auto
+            margin-top: 5vw
+
+        &__row
+            justify-content: center
+            margin-top: 3vw
+            margin-bottom: 3vw
+
+            &__social-media
+                
+                height: 3vw
+                margin: 3vw
+    
+    // ======================================================
+    // Gracias Page
+    // ======================================================
+    
+    [GraciasPage]
+        overflow-y: hidden
+
+    .gracias
+        background: url(/img-2.0/bg-gracias-8.png)
+        background-size: cover
+        background-repeat: no-repeat
+        width: 100vw
+        height: 46vw
+        align-items: center
+
+        &__img
+            height: 15vw
+            margin-left: 12vw
+
+        &__col
+            margin-left: 20vw
+            width: 21vw
+
+            &__title
+                font-size: $font-size  * 2
+                color: $primary
+
+            &__paragraph
+                font-size: $font-size
+                width: 25vw
+                margin-bottom: 1vw
+
+            &__regresar
+                color: $white
+                
+                font-size: ( $font-size * 0.6 ) 
+                font-weight: 600
+                font-family: $font
+                margin: auto
+                background: $accent
+                padding: 0.2vw 1vw
+                border-radius: 3vw
+                transition: background 0.3s ease 
+
+                &:hover
+                    background: $accent-hover
+
+        &__col-2
+            margin-top: 38vw
+            // margin-bottom: 3vw
+            margin-left: 8vw
+            width: 40vw
+
+            &__text-1
+                color: $paragraph
+                font-size: $font-size * 0.7
+
+
+            &__text-2
+                color: $primary
+                font-size: $font-size * 0.7
+
+            &__text-3
+                color: $accent-hover
+                font-size: $font-size * 0.7

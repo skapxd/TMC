@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{!-- Metas --}}
+    <meta name="robots" content="no index">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favico.ico" type="image/x-ico">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    {{!-- Font Famili poppins --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Tecnología Medica Celular</title>
+</head>
+<body class="col">
+
+    <header class="header row">
+
+        <a href="/#Inicio"><img src="/img/marca.svg" alt="marca-tecnica-medica-celular" class="header__marca-img"></a>
+
+        <a href="/#Nosotros" class="header__links">Nosotros</a>
+        <a href="/#LoQueHacemos" class="header__links">Lo que hacemos</a>
+        <a href="/#MedicinaRegenerativa" class="header__links">Medicina regenerativa</a>
+
+        <a href="/#Contactanos" class="header__contactanos">Contáctanos</a>
+
+    </header> 
+
+
+    <div class="Admin col">
+
+        <div class="Admin__wrapper-col col">
+
+            <h2 class="Admin__wrapper-col__title">Registro de contactos</h2>
+
+            <div class="Admin__wrapper-col__table row">
+
+                <div class="Admin__wrapper-col__table__col col">
+
+                    <div class="Admin__wrapper-col__table__head">#</div>
+                        {{#each contacts }}
+                       <div class="Admin__wrapper-col__table__body">{{ this.id }} </div>  
+                        {{/each  }}
+
+                </div>
+
+                {{!-- Columna 1 --}}
+                <div class="Admin__wrapper-col__table__col col">
+
+                    <div class="Admin__wrapper-col__table__head">Correo electrónico</div>
+                        {{#each contacts }}
+                       <div class="Admin__wrapper-col__table__body">{{ this.email }} </div>  
+                        {{/each  }}
+
+                </div>
+
+                {{!-- Columna 2 --}}
+                <div class="Admin__wrapper-col__table__col col">
+
+                    <div class="Admin__wrapper-col__table__head">Nombre</div>
+                        {{#each contacts }}
+                       <div class="Admin__wrapper-col__table__body"> {{ this.nombre }} </div>  
+                        {{/each  }}
+                </div>
+
+
+                {{!-- Columna 3 --}}
+                <div class="Admin__wrapper-col__table__col col">
+
+                    <div class="Admin__wrapper-col__table__head">Teléfono</div>
+                        {{#each contacts }}
+                       <div class="Admin__wrapper-col__table__body"> {{ this.telefono }} </div>  
+                        {{/each  }}
+
+                </div>
+
+                {{!-- Columna 4 --}}
+                <div class="Admin__wrapper-col__table__col col">
+
+                    <div class="Admin__wrapper-col__table__head">Fecha</div>
+                        {{#each contacts }}
+                       <div class="Admin__wrapper-col__table__body"> {{ this.fecha }} </div>  
+                        {{/each  }}
+                </div>
+
+            </div>
+
+            <h2 class="Admin__wrapper-col__fotter"></h2>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

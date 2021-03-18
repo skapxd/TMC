@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favico.ico" type="image/x-ico">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    {{!-- Font Famili poppins --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Tecnología Medica Celular</title>
+</head>
+<body class="col">
+
+    {{!-- Header --}}
+    <header class="header row">
+        <a href="/#Inicio"><img src="/img/marca.svg" alt="marca-tecnica-medica-celular" class="header__marca-img"></a>
+
+        <a href="/#Nosotros" class="header__links">Nosotros</a>
+        <a href="/#LoQueHacemos" class="header__links">Lo que hacemos</a>
+        <a href="/#MedicinaRegenerativa" class="header__links">Medicina regenerativa</a>
+
+        <a href="/#Contactanos" class="header__contactanos">Contáctanos</a>
+    </header> 
+
+
+    <div class="Auth col">
+
+        <form class="Auth__wrapper col" id='form'>
+
+            {{!-- <img src="/img/close.svg" alt="icon close blue" class="Auth__wrapper__close"> --}}
+
+            <img src="/img/logo-gris.svg" alt="logo tmc gris" class="Auth__wrapper__img">
+
+            <h2 class="Auth__wrapper__title">Iniciar sesión</h2>
+
+            <input required type="email" name="email" id="email" class="Auth__wrapper__inputs">
+            <label for="email" class="Auth__wrapper__labels">Correo:</label>
+            
+            <input required type="password" name="pass" id="pass" class="Auth__wrapper__inputs">
+            <label for="pass" class="Auth__wrapper__labels">Contraseña:</label>
+
+            <h3 id="errorUser"  class="Auth__wrapper__error ">Usuario invalido - click para enviar credenciales al correo</h3>
+
+            <h3 id="errorPass"  class="Auth__wrapper__error ">Contraseña invalida - click para enviar credenciales al correo</h3>
+
+            <input type="submit" value="Iniciar" class="Auth__wrapper__submit">
+
+
+        </form>
+
+    </div>
+
+    <script src="/js/form.auth.js">
+
+    </script>
+
+</body>
+</html>

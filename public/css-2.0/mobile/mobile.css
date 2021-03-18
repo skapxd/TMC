@@ -1,0 +1,764 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button {
+  border: 0.1vw solid #fff0;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.stack {
+  position: relative;
+}
+
+@media only screen and (max-width: 750px) {
+  [Desktop] {
+    display: none;
+  }
+  .Desktop {
+    display: none;
+  }
+  .btn-whatsapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    z-index: 999;
+    -webkit-box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3);
+  }
+  .btn-whatsapp__img {
+    background: url(/img-2.0/Whatsapp.png);
+    background-size: contain;
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .header-mobile-row {
+    height: 10vw;
+    background: #FFF;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 5vw;
+    z-index: 50;
+    -webkit-box-shadow: 3vw 3vw 6vw rgba(0, 0, 0, 0.3);
+            box-shadow: 3vw 3vw 6vw rgba(0, 0, 0, 0.3);
+  }
+  .header-mobile-row__logo {
+    height: 9vw;
+  }
+  .header-mobile-row__contacto {
+    color: #FFF;
+    height: 5vw;
+    background: #27CAFF;
+    padding: 1vw 3vw;
+    border-radius: 1vw;
+    line-height: 1;
+    font-size: 2.82vw;
+    margin-right: 5vw;
+    text-align: center;
+  }
+  .header-mobile-row__menu {
+    color: #FFF;
+    font-size: 23.5vw;
+    margin-right: 5vw;
+  }
+  .Container-1 {
+    background: url(/img-2.0/bg-b-1-mb.png);
+    background-size: contain;
+    width: 100vw;
+    height: 64vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: 700;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+  .Container-1__text-1 {
+    color: #27CAFF;
+    font-size: 4.7vw;
+  }
+  .Container-1__text-2 {
+    color: #FFF;
+    font-size: 4.7vw;
+  }
+  .Container-1__text-3 {
+    color: #055CFA;
+    font-size: 4.7vw;
+  }
+  .Container-2 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 21vw;
+  }
+  .Container-2__row-1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 3vw;
+    width: 100vw;
+  }
+  .Container-2__row-1__img {
+    margin-left: 11vw;
+    margin-right: 1vw;
+    margin-bottom: 5vw;
+    height: 2vw;
+  }
+  .Container-2__row-1__title {
+    color: #C5C5C5;
+    font-size: 6.58vw;
+    font-weight: 500;
+    width: 40vw;
+    line-height: 1;
+  }
+  .Container-2__paragraph-1 {
+    margin-top: 3vw;
+    font-size: 2.35vw;
+    color: #888888;
+    font-weight: 400;
+  }
+  .Container-2__paragraph-2 {
+    margin-top: 3vw;
+    font-size: 2.35vw;
+    color: #FFF;
+    background: #27CAFF;
+    padding: 1vw 3vw;
+    font-weight: 600;
+    border-radius: 3vw 0 3vw 3vw;
+  }
+  .Container-2__row-2 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 3vw;
+    width: 100vw;
+  }
+  .Container-2__row-2__img {
+    margin-left: 11vw;
+    margin-right: 1vw;
+    margin-bottom: 5vw;
+    height: 2vw;
+  }
+  .Container-2__row-2__title {
+    color: #055CFA;
+    font-size: 6.58vw;
+    font-weight: 500;
+    width: 40vw;
+    line-height: 1;
+  }
+  .Container-2__img-1 {
+    width: 58vw;
+  }
+  .Container-2__img-2 {
+    width: 70vw;
+    margin-left: -35vw;
+    margin-bottom: 3vw;
+  }
+  .Container-3 {
+    background: url(/img-2.0/bg-b3-mb.png);
+    background-size: contain;
+    width: 100vw;
+    height: 175vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 21vw;
+  }
+  .Container-3__row-1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 7vw;
+    width: 100vw;
+  }
+  .Container-3__row-1__img {
+    margin-left: 11vw;
+    margin-right: 1vw;
+    height: 2vw;
+  }
+  .Container-3__row-1__title {
+    color: #27CAFF;
+    font-size: 6.58vw;
+    font-weight: 500;
+    width: 40vw;
+    line-height: 1;
+  }
+  .Container-3__paragraph-1 {
+    margin-top: 3vw;
+    font-size: 2.82vw;
+    color: #FFF;
+    font-weight: 400;
+  }
+  .Contactanos {
+    margin-top: 5vw;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 21vw;
+  }
+  .Contactanos__title {
+    text-align: center;
+    font-size: 7.52vw;
+    color: #020654;
+  }
+  .Contactanos__paragraph {
+    text-align: center;
+    font-size: 2.585vw;
+    color: #888888;
+    margin-bottom: 3vw;
+  }
+  .Contactanos__form__input {
+    font-size: 2.585vw;
+    border: 0.1vw solid #C5C5C5;
+    color: #888888;
+    padding: 2vw 3vw;
+    border-radius: 5vw;
+    margin: 1vw;
+  }
+  .Contactanos__form__input:focus {
+    outline: none;
+  }
+  .Contactanos__form__button {
+    border: 0.1vw solid #fff0;
+    margin: 2vw auto;
+    padding: 0.5vw 2vw;
+    font-size: 2.585vw;
+    color: #FFF;
+    font-weight: 600;
+    cursor: pointer;
+    background: #27CAFF;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+    border-radius: 1vw;
+  }
+  .Contactanos__form__button:hover {
+    background: #1e96be;
+  }
+  .Contactanos__col-1 {
+    margin-top: 8vw;
+    margin-bottom: 3vw;
+    margin-left: 35vw;
+    width: 40vw;
+  }
+  .Contactanos__col-1__text-1 {
+    color: #888888;
+    font-size: 2.585vw;
+  }
+  .Contactanos__col-1__text-2 {
+    color: #020654;
+    font-size: 2.585vw;
+  }
+  .Contactanos__col-1__text-3 {
+    color: #1e96be;
+    font-size: 2.585vw;
+  }
+  .footer {
+    background: #2d2d2d;
+  }
+  .footer__title {
+    color: #FFF;
+    font-size: 3.29vw;
+    margin: auto;
+    margin-top: 5vw;
+  }
+  .footer__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+  .footer__row__social-media {
+    height: 6vw;
+    margin: 4vw;
+  }
+  .gracias {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gracias__img {
+    margin-top: 10vw;
+    height: 30vw;
+    margin-left: -7vw;
+  }
+  .gracias__title {
+    font-size: 4.7vw;
+    color: #020654;
+  }
+  .gracias__paragraph {
+    font-size: 3.29vw;
+    width: 40vw;
+    margin-left: 10vw;
+    margin-bottom: 1vw;
+  }
+  .gracias__regresar {
+    color: #FFF;
+    font-size: 2.82vw;
+    font-weight: 600;
+    font-family: "Poppins";
+    margin: auto;
+    background: #27CAFF;
+    padding: 0.2vw 1vw;
+    border-radius: 3vw;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+  }
+  .gracias__regresar:hover {
+    background: #1e96be;
+  }
+  .gracias__col-2 {
+    margin-top: 38vw;
+    margin-left: 8vw;
+    width: 40vw;
+  }
+  .gracias__col-2__text-1 {
+    color: #888888;
+    font-size: 3.29vw;
+  }
+  .gracias__col-2__text-2 {
+    color: #020654;
+    font-size: 3.29vw;
+  }
+  .gracias__col-2__text-3 {
+    color: #1e96be;
+    font-size: 3.29vw;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+  [Mobile] {
+    display: none;
+  }
+  .btn-whatsapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    z-index: 999;
+    -webkit-box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3);
+  }
+  .btn-whatsapp__img {
+    background: url(/img-2.0/Whatsapp.png);
+    background-size: contain;
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-mask: black;
+            mask: black;
+  }
+  .header {
+    height: 6vw;
+    width: 100vw;
+    background: #FFF;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-shadow: 0px 1.1vw 0.8vw rgba(0, 0, 0, 0.23);
+            box-shadow: 0px 1.1vw 0.8vw rgba(0, 0, 0, 0.23);
+    z-index: 100;
+    position: fixed;
+  }
+  .header__marca-img {
+    height: 6vw;
+    margin-left: 5vw;
+  }
+  .header__links {
+    color: #020654;
+    font-family: "Poppins";
+    font-size: 1.4vw;
+    font-weight: 600;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+  .header__links:hover {
+    color: #b4b4b4;
+  }
+  .header__contactanos {
+    color: #FFF;
+    font-size: 1.2vw;
+    font-weight: 600;
+    font-family: "Poppins";
+    margin-right: 5vw;
+    background: #27CAFF;
+    padding: 0.2vw 1vw;
+    border-radius: 3vw;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+  }
+  .header__contactanos:hover {
+    background: #1e96be;
+  }
+  .Container-1 {
+    background: url(/img-2.0/bg-b-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 38.4vw;
+    padding-left: 9vw;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Container-1__logo {
+    margin-top: 6vw;
+    height: 20vw;
+  }
+  .Container-1__col {
+    margin-top: 4vw;
+    margin-left: 5vw;
+    font-weight: 600;
+  }
+  .Container-1__col__text-1 {
+    color: #27CAFF;
+    font-size: 2vw;
+  }
+  .Container-1__col__text-2 {
+    color: #FFF;
+    font-size: 2vw;
+  }
+  .Container-1__col__text-3 {
+    color: #055CFA;
+    font-size: 2vw;
+  }
+  .Container-1__col__img {
+    width: 15vw;
+    margin-top: 1vw;
+    margin-left: 10vw;
+  }
+  .Container-2 {
+    padding: 0 15vw;
+    margin-top: 5vw;
+  }
+  .Container-2__title {
+    font-size: 4vw;
+    line-height: 1;
+    font-weight: 600;
+    color: #888888;
+  }
+  .Container-2__img {
+    margin-left: -6vw;
+    margin-top: 1vw;
+    height: 10vw;
+  }
+  .Container-2__col {
+    margin-left: 12vw;
+    margin-bottom: 5vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Container-2__col__paragraph-1 {
+    font-size: 1.4vw;
+    color: #888888;
+    width: 33vw;
+  }
+  .Container-2__col__paragraph-2 {
+    width: 36vw;
+    margin-top: 2vw;
+    background: #27CAFF;
+    font-size: 1.4vw;
+    color: #FFF;
+    padding: 0.7vw 2vw;
+    border-radius: 3vw 0 3vw 3vw;
+  }
+  .Container-3 {
+    background: #F7F7F7;
+    padding: 5vw 15vw;
+  }
+  .Container-3__col-1 {
+    width: 30vw;
+  }
+  .Container-3__col-1__title {
+    font-size: 4vw;
+    line-height: 1;
+    font-weight: 600;
+    color: #1e96be;
+  }
+  .Container-3__col-1__paragraph-1 {
+    font-size: 1.4vw;
+    color: #888888;
+    width: 33vw;
+    margin-left: -3vw;
+  }
+  .Container-3__col-1__img {
+    margin-top: 2vw;
+    width: 50vw;
+    margin-left: -18vw;
+  }
+  .Container-3__col-2 {
+    margin-left: 10vw;
+    margin-top: 10vw;
+  }
+  .Container-3__col-2__img {
+    width: 30vw;
+  }
+  .Container-3__col-2__paragraph-1 {
+    font-size: 1.4vw;
+    color: #888888;
+    width: 33vw;
+    margin-left: -3vw;
+  }
+  .Container-4 {
+    background: url(/img-2.0/bg-3-8.png);
+    background-size: contain;
+    width: 100vw;
+    height: 53vw;
+    padding: 5vw 15vw;
+  }
+  .Container-4__col-1 {
+    width: 30vw;
+  }
+  .Container-4__col-1__title {
+    font-size: 4vw;
+    line-height: 1;
+    font-weight: 600;
+    color: #1e96be;
+  }
+  .Container-4__col-1__paragraph-1 {
+    margin-top: 2vw;
+    font-size: 1.4vw;
+    color: #FFF;
+    width: 33vw;
+    margin-left: -3vw;
+  }
+  .Container-4__col-2 {
+    margin-top: -3vw;
+    width: 30vw;
+    margin-left: 10vw;
+  }
+  .Container-4__col-2__paragraph-1 {
+    margin-top: 2vw;
+    font-size: 1.4vw;
+    color: #FFF;
+    width: 33vw;
+    margin-left: -3vw;
+  }
+  .Container-4__col-2__img-1 {
+    height: 3vw;
+    margin-top: 3vw;
+  }
+  .Container-4__col-2__img-2 {
+    margin-top: 3vw;
+    height: 32vw;
+    width: 35vw;
+  }
+  .Contactanos {
+    margin-top: 5vw;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 36vw;
+  }
+  .Contactanos__title {
+    text-align: center;
+    font-size: 4vw;
+    color: #020654;
+  }
+  .Contactanos__paragraph {
+    text-align: start;
+    font-size: 1.6vw;
+    color: #888888;
+    margin-bottom: 1vw;
+  }
+  .Contactanos__form__input {
+    font-size: 1.1vw;
+    border: 0.1vw solid #C5C5C5;
+    color: #888888;
+    padding: 1vw 1.5vw;
+    border-radius: 5vw;
+    margin: 1vw 0vw;
+  }
+  .Contactanos__form__input:focus {
+    outline: none;
+  }
+  .Contactanos__form__button {
+    border: 0.1vw solid #fff0;
+    margin: 2vw auto;
+    padding: 0.5vw 2vw;
+    font-size: 1.1vw;
+    color: #FFF;
+    font-weight: 600;
+    cursor: pointer;
+    background: #27CAFF;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+    border-radius: 1vw;
+  }
+  .Contactanos__form__button:hover {
+    background: #1e96be;
+  }
+  .Contactanos__col-1 {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    margin-left: 35vw;
+    width: 40vw;
+  }
+  .Contactanos__col-1__text-1 {
+    color: #888888;
+    font-size: 1.4vw;
+  }
+  .Contactanos__col-1__text-2 {
+    color: #020654;
+    font-size: 1.4vw;
+  }
+  .Contactanos__col-1__text-3 {
+    color: #1e96be;
+    font-size: 1.4vw;
+  }
+  .footer {
+    background: #2d2d2d;
+  }
+  .footer__title {
+    color: #FFF;
+    font-size: 2vw;
+    margin: auto;
+    margin-top: 5vw;
+  }
+  .footer__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+  .footer__row__social-media {
+    height: 3vw;
+    margin: 3vw;
+  }
+  [GraciasPage] {
+    overflow-y: hidden;
+  }
+  .gracias {
+    background: url(/img-2.0/bg-gracias-8.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 46vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .gracias__img {
+    height: 15vw;
+    margin-left: 12vw;
+  }
+  .gracias__col {
+    margin-left: 20vw;
+    width: 21vw;
+  }
+  .gracias__col__title {
+    font-size: 4vw;
+    color: #020654;
+  }
+  .gracias__col__paragraph {
+    font-size: 2vw;
+    width: 25vw;
+    margin-bottom: 1vw;
+  }
+  .gracias__col__regresar {
+    color: #FFF;
+    font-size: 1.2vw;
+    font-weight: 600;
+    font-family: "Poppins";
+    margin: auto;
+    background: #27CAFF;
+    padding: 0.2vw 1vw;
+    border-radius: 3vw;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+  }
+  .gracias__col__regresar:hover {
+    background: #1e96be;
+  }
+  .gracias__col-2 {
+    margin-top: 38vw;
+    margin-left: 8vw;
+    width: 40vw;
+  }
+  .gracias__col-2__text-1 {
+    color: #888888;
+    font-size: 1.4vw;
+  }
+  .gracias__col-2__text-2 {
+    color: #020654;
+    font-size: 1.4vw;
+  }
+  .gracias__col-2__text-3 {
+    color: #1e96be;
+    font-size: 1.4vw;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */
