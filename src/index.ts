@@ -12,9 +12,9 @@ const port =  process.env.PORT || 3000;
 
 const app = express();
 
-// createConnection()
-//     .then(() => console.log('Connection success'))
-//     .catch( err => console.log('Connection err: ', err)); 
+createConnection()
+    .then(() => console.log('Connection success'))
+    .catch( err => console.log('Connection err: ', err)); 
 
 
 // Handlerbars

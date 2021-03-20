@@ -9,11 +9,12 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const hbs_1 = __importDefault(require("hbs"));
 const router_1 = __importDefault(require("./router/router"));
+const typeorm_1 = require("typeorm");
 const port = process.env.PORT || 3000;
 const app = express_1.default();
-// createConnection()
-//     .then(() => console.log('Connection success'))
-//     .catch( err => console.log('Connection err: ', err)); 
+typeorm_1.createConnection()
+    .then(() => console.log('Connection success'))
+    .catch(err => console.log('Connection err: ', err));
 // Handlerbars
 app.set('view engine', 'hbs');
 // hbs.registerPartials( __dirname + '/views/partials');
