@@ -1,0 +1,14 @@
+{
+    "type": "mssql",
+    "host": "test-api-rest.database.windows.net",
+    "port": 1433,
+    "username": "skapxd",
+    "password": "65199Fre",
+    "database": "test-API-REST",
+    "entities": ["dist/entity/**/*.js"],
+    "synchronize": true,
+    "options": {
+        "encrypt": true,
+        "enableArithAbort": true
+    }
+}

@@ -1,6 +1,6 @@
 node_modules/
 
-src/credentials.ts
-dist/credentials.js
+# src/credentials.ts
+# dist/credentials.js
 
-ormconfig.json
+# ormconfig.json
