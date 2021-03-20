@@ -42,7 +42,7 @@ export const postForm = async ( req: Request, res: Response) : Promise<Response>
         const result = await getRepository(Contact).save( newContact );
 
         // email.sendMail('gerencia@tecnologiamedicacelular.com', {
-        email.sendMail('hbiaser132@gmail.com', 
+        email.sendMail('gerencia@tecnologiamedicacelular.com.co', 
             { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${ body.email }\nNombre: ${ body.nombre }\nTelefono: ${ body.telefono }\nFecha: ${ body.fecha }` });
 
 
