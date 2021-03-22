@@ -37,7 +37,7 @@ const postForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const newContact = typeorm_1.getRepository(Contact_1.Contact).create(body);
         const result = yield typeorm_1.getRepository(Contact_1.Contact).save(newContact);
         // email.sendMail('gerencia@tecnologiamedicacelular.com', {
-        email.sendMail('gerencia@tecnologiamedicacelular.com.co', { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${body.email}\nNombre: ${body.nombre}\nTelefono: ${body.telefono}\nFecha: ${body.fecha}` });
+        email.sendMail('gerencia@tecnologiamedicacelular.com', { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${body.email}\nNombre: ${body.nombre}\nTelefono: ${body.telefono}\nFecha: ${body.fecha}` });
         return res.status(200).json({
             res: result
         });
