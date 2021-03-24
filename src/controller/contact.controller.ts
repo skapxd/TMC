@@ -28,7 +28,7 @@ export const getGracias = async ( req: Request, res: Response ) : Promise<void> 
 }
 
 export const postForm = async ( req: Request, res: Response) : Promise<Response> => {
-    
+     
     
     try {
         let body : Email=  req.body;
