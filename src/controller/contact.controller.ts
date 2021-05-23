@@ -1,109 +1,114 @@
-import { Request, Response } from 'express'
+import { Handler } from 'express'
 import moment from 'moment';
-import { getRepository, Repository } from 'typeorm';
-import { Contact } from '../entity/Contact';
 import Mail from '../mail/Mail';
-import { Admin } from '../entity/Admin';
 import { generarJWT } from '../helper/generar-jwt';
 import { adminPass, adminUser } from '../credentials';
+import { getConnection } from "../db/db";
+import { nanoid } from "nanoid";
 
-interface Email {
+interface Contact2 {
+    id?: string;
     email: string;
-    nombre: string;
     telefono: string;
+    nombre: string; 
     fecha: string;
 }
 
 const email = new Mail();
 
 
-export const getHome = async ( req: Request, res: Response): Promise<void> => {
+export const getHome: Handler = async ( req, res) => {
 
     return res.render('home-2.0.hbs', {});
-}
+} 
 
-export const getGracias = async ( req: Request, res: Response ) : Promise<void> => {
+export const getGracias: Handler = async ( req, res )  => {
     
     return res.render('gracias', {});
 }
 
-export const postForm = async ( req: Request, res: Response) : Promise<Response> => {
-    
-    
+export const postForm: Handler = async ( req, res)  => {
+
     try {
-        let body : Email=  req.body;
-        
         let fecha = moment().subtract(5, 'hours').format('YYYY[-]MM[-]DD HH:mm:ss');
         
-        body['fecha'] = fecha;         
-    
-        const newContact = getRepository(Contact).create( body );
-        
-        const result = await getRepository(Contact).save( newContact );
+        const contact: Contact2 = req.body
 
-        // email.sendMail('gerencia@tecnologiamedicacelular.com', {
+        console.log(fecha);
+
+        
+        const newContact = {
+            id: nanoid(),
+            nombre: contact.nombre,
+            email: contact.email,
+            telefono: contact.telefono,
+            fecha,
+        }
+
+        getConnection().get('contacts').push(newContact).write()
+
+        // email.sendMail('hbiaser132@gmail.com', 
         email.sendMail('gerencia@tecnologiamedicacelular.com', 
-            { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${ body.email }\nNombre: ${ body.nombre }\nTelefono: ${ body.telefono }\nFecha: ${ body.fecha }` });
+            { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${ contact.email }\nNombre: ${ contact.nombre }\nTelefono: ${ contact.telefono }\nFecha: ${ fecha }` });
 
 
-        return res.status(200).json({
-            res: result
-        }); 
-
-    } catch (err) {
-
-        console.log(`el error es: ${ err }`)
+        return res.json(newContact);
         
 
-        return res.status(200).json({
-            res: 'Ocurrio un errorn el controlador',
-            err
+    } catch (error) {
 
-        });
+        return res.status(404).json({
+            success: false,
+            error
+        })
+        
     }
 }
 
-export const getForm = async ( req: Request, res: Response) : Promise<Response> => {
+export const getForm: Handler = async ( req, res)  => {
 
-    const contacts = await getRepository(Contact).find();
+
+    const contacts = getConnection().get('contacts').values();
+    console.log(contacts);
 
     return res.json(contacts);
 }
 
-export const getAdmin = async ( req: Request, res: Response ) : Promise<void> => {
+export const getAdmin: Handler = async ( req, res )  => {
     
-    const contacts = (await getRepository(Contact).find()).reverse()
-    
-    return res.render('Admin',  {
-        contacts
-    }) 
+    return res.render('Admin',  ) 
 }
 
-export const getAuth = async ( req: Request, res: Response) : Promise<void> => {
+export const getAuth: Handler = async ( req, res )  => {
 
     console.log(req.params.token)
 
     return res.render('auth', {})
 }
 
-export const postAuth = async (req: Request, res: Response) : Promise<Response> => {
+export const postAuth: Handler = async ( req, res )  => {
 
     const { email, pass } = req.body;
 
     try {
-    
-        // Verificar si el email existe
-        const auth = await getRepository(Admin).findOne({ email });
+        
+        interface Admin {
+            email: string
+            pass: string
+        }
 
-        console.log(auth)
-
-        if ( !auth ) {
+        const auth: Admin = { 
+            email: "admin@tmc.com",
+            pass: "tmc123*"
+        }  
+        // Verificar email
+        if (email !== auth.email) {
+            
             return res.status(400).json({
-                msg: 'Usuario no valido',
-                usuario: false
+                msg: 'correo no valido ',
+                pass: false
             })
         }
-        // Si el usuario esta activo
 
         // Verificar contraseña
         if ( pass !== auth.pass) {
@@ -117,7 +122,7 @@ export const postAuth = async (req: Request, res: Response) : Promise<Response> 
         console.log(`uid desde controller ${req.body.uid}`)
 
         // Generar JWT
-        const token = await generarJWT( auth.id );
+        const token = await generarJWT( auth.email );
 
         return res.json({
             // auth,
@@ -137,10 +142,12 @@ export const postAuth = async (req: Request, res: Response) : Promise<Response> 
     }
 }
 
-export const getCredential = async (req: Request, res: Response ) : Promise<Response> => {
+export const getCredential: Handler = async (req, res )  => {
 
-    // email.sendMail('gerencia@tecnologiamedicacelular.com', {
-    email.sendMail('hbiaser132@gmail.com', { msjText: `sus credenciales son \n\nUsuario: ${ adminUser } \nContraseña: ${ adminPass }` });
+    // email.sendMail('hbiaser132@gmail.com', 
+    email.sendMail('gerencia@tecnologiamedicacelular.com', 
+
+        { msjText: `sus credenciales son \n\nUsuario: ${ adminUser } \nContraseña: ${ adminPass }` });
     
     return res.json({
         ok: true

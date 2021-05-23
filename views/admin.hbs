@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" >
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -31,7 +31,8 @@
     </header> 
 
 
-    <div class="Admin col">
+    <div  id="body" class="Admin col">
+
 
         <div class="Admin__wrapper-col col">
 
@@ -41,30 +42,28 @@
 
                 <div class="Admin__wrapper-col__table__col col">
 
-                    <div class="Admin__wrapper-col__table__head">#</div>
-                        {{#each contacts }}
-                       <div class="Admin__wrapper-col__table__body">{{ this.id }} </div>  
-                        {{/each  }}
+                    <div  class="Admin__wrapper-col__table__head">#</div>
+                       <div id="index" class="Admin__wrapper-col__table__body">
 
+                       </div>
                 </div>
 
                 {{!-- Columna 1 --}}
                 <div class="Admin__wrapper-col__table__col col">
 
                     <div class="Admin__wrapper-col__table__head">Correo electrónico</div>
-                        {{#each contacts }}
-                       <div class="Admin__wrapper-col__table__body">{{ this.email }} </div>  
-                        {{/each  }}
+                       <div id="email" class="Admin__wrapper-col__table__body">
 
+                    </div>  
                 </div>
 
                 {{!-- Columna 2 --}}
                 <div class="Admin__wrapper-col__table__col col">
 
                     <div class="Admin__wrapper-col__table__head">Nombre</div>
-                        {{#each contacts }}
-                       <div class="Admin__wrapper-col__table__body"> {{ this.nombre }} </div>  
-                        {{/each  }}
+                        <div id="name" class="Admin__wrapper-col__table__body"> 
+
+                        </div>  
                 </div>
 
 
@@ -72,19 +71,18 @@
                 <div class="Admin__wrapper-col__table__col col">
 
                     <div class="Admin__wrapper-col__table__head">Teléfono</div>
-                        {{#each contacts }}
-                       <div class="Admin__wrapper-col__table__body"> {{ this.telefono }} </div>  
-                        {{/each  }}
+                        <div id="phone" class="Admin__wrapper-col__table__body"> 
 
+                        </div>  
                 </div>
 
                 {{!-- Columna 4 --}}
                 <div class="Admin__wrapper-col__table__col col">
 
                     <div class="Admin__wrapper-col__table__head">Fecha</div>
-                        {{#each contacts }}
-                       <div class="Admin__wrapper-col__table__body"> {{ this.fecha }} </div>  
-                        {{/each  }}
+                        <div id="timeData" class="Admin__wrapper-col__table__body"> 
+                        
+                        </div>  
                 </div>
 
             </div>
@@ -97,7 +95,72 @@
 
     </div>
 
+<script>
 
+    ( async () => {
+        const indexDOM = document.querySelector('#index')
+        const emailDOM = document.querySelector('#email') 
+        const nameDOM = document.querySelector('#name')
+        const phoneDOM = document.querySelector('#phone')
+        const timeDataDOM = document.querySelector('#timeData')
+        const bodyDOM = document.querySelector('#body')
+
+        try {
+
+            const getRegisterForm = async () => {
+
+                const response =  await fetch('../form')
+
+                const data = await response.json();
+
+                return data;
+            }
+
+            const data = (await getRegisterForm()).reverse()
+
+            const indexHTML = (dom, data) => {
+                for (let i = 0; i < data.length; i++){
+
+                    dom.innerHTML += `
+
+                        <div >
+                            ${data.length - i}
+                        </div>
+                    `
+                }
+            } 
+
+            const innerHTML = (dom, data, name) => {
+
+                for (const i of data ){
+
+                    dom.innerHTML += `
+                        <div >
+                            ${i[`${name}`]}
+                        </div>
+                    `
+                }
+            }
+
+            indexHTML(indexDOM, data);
+
+            innerHTML(emailDOM, data, 'email')
+            
+            innerHTML(nameDOM, data, 'nombre')
+
+            innerHTML(phoneDOM, data, 'fecha')
+
+            innerHTML(timeDataDOM, data, 'telefono')
+
+        } catch (e) {
+
+            bodyDOM.innerHTML = ` error: ${e}`
+
+        }
+
+    })();
+
+</script>
 
 </body>
 </html>

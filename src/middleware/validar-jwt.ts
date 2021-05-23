@@ -4,10 +4,37 @@ import { firmaJWT } from "../credentials";
 
 export const validarJWTViews = ( req: Request, res: Response, next: NextFunction ) => {
     
-    // const token = req.header('x-token');
-    const token = req.params.token
 
-    console.log(token)
+
+    const cookie: string[] = req.header('cookie')?.split(';') || [];
+
+
+    let token: string = '';
+
+    // recorre la lista de cookies
+    for (const item of cookie) {
+        
+        // busca en las cookies si hay un string que coincida con token
+        if ( item.indexOf('token') !== -1 ) {
+
+            // separa el string en [clave, valor] y asigna el valor a la variable token 
+            token = item.split('=')[1];
+            
+        }
+    }
+    
+    // cookie.indexOf('token')
+
+    
+    console.log(`validarJWT token: ${token}`);
+
+
+
+    // const token = req.header('x-token');
+    // const token = req.params.token
+
+    // console.log(token)
+    // console.log('token this');
 
 
     if ( !token ) {
@@ -17,13 +44,15 @@ export const validarJWTViews = ( req: Request, res: Response, next: NextFunction
         //     msg: 'No hay token en la peticion'
         // })
 
-    } 
+    }  
 
     try {
             
         const payload : any = jwt.verify( token , firmaJWT);
 
-        req.body.uid = payload.uid;
+        req.body.email = payload.email;
+
+        // console.log( payload );
 
         next();
 

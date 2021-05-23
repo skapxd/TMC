@@ -1,0 +1,17 @@
+GET http://localhost:3000
+
+###
+
+POST http://localhost:3000/form
+content-type: application/json
+
+{
+    "nombre": "name",
+    "email": "email",
+    "fecha": "fecha",
+    "telefono": "telefono"
+}
+
+###
+
+GET  http://localhost:3000/form

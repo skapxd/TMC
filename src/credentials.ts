@@ -3,4 +3,4 @@ export const passMail = 'wfklxjncfzkfccvc';
 export const firmaJWT = 'FirmaJWTTMCUnica132*'
 
 export const adminUser = 'admin@tmc.com'
-export const adminPass = 'Admin123*'
+export const adminPass = 'tmc123*'

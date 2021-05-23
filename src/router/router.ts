@@ -22,6 +22,6 @@ router.get('/auth', getAuth);
 // Recuperar credenciales
 router.get('/recuperar-credenciales', getCredential)
 
-router.get('/admin/:token',[ validarJWTViews ], getAdmin);
+router.get('/admin',[ validarJWTViews ], getAdmin);
 
 export default router;

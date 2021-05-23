@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken';
 import { firmaJWT } from '../credentials';
 
-export const generarJWT = ( uid: number) => {
+export const generarJWT = ( email: string) => {
 
     return new Promise( (resolve, reject) => {
         
-        const payload = { uid };
+        const payload = { email };
 
         return jwt.sign( payload, firmaJWT, { expiresIn: '4h'}, (err, token ) => {
             
@@ -17,7 +17,7 @@ export const generarJWT = ( uid: number) => {
             } else {
                 resolve( token );
             }
-        })
+        }) 
 
     });
 }
