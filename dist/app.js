@@ -9,7 +9,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const hbs_1 = __importDefault(require("hbs"));
 const router_1 = __importDefault(require("./router/router"));
 const app = express_1.default();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 7548);
 // middlewares
 app.use(cors_1.default());
 app.use(morgan_1.default('dev'));
