@@ -7,7 +7,7 @@ import router from './router/router';
 
 const app = express();
 
-app.set('port', process.env.PORT || 7548);
+app.set('port', process.env.PORT || 3000);
 
 // middlewares
 app.use(cors());
