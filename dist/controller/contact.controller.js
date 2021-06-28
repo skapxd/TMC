@@ -41,9 +41,8 @@ const postForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         };
         console.log(newContact);
         // getConnection().get('contacts').push(newContact).write()
-        email.sendMail('hbiaser132@gmail.com', 
-        // email.sendMail('gerencia@tecnologiamedicacelular.com', 
-        { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${contact.email}\nNombre: ${contact.nombre}\nTelefono: ${contact.telefono}\nFecha: ${fecha}` });
+        // email.sendMail('hbiaser132@gmail.com', 
+        email.sendMail('gerencia@tecnologiamedicacelular.com', { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${contact.email}\nNombre: ${contact.nombre}\nTelefono: ${contact.telefono}\nFecha: ${fecha}` });
         return res.json(newContact);
     }
     catch (error) {
