@@ -48,8 +48,8 @@ export const postForm: Handler = async ( req, res)  => {
 
         // getConnection().get('contacts').push(newContact).write()
 
-        email.sendMail('hbiaser132@gmail.com', 
-        // email.sendMail('gerencia@tecnologiamedicacelular.com', 
+        // email.sendMail('hbiaser132@gmail.com', 
+        email.sendMail('gerencia@tecnologiamedicacelular.com', 
             { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${ contact.email }\nNombre: ${ contact.nombre }\nTelefono: ${ contact.telefono }\nFecha: ${ fecha }` });
 
 
