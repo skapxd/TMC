@@ -32,7 +32,6 @@ const postForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let fecha = moment_1.default().subtract(5, 'hours').format('YYYY[-]MM[-]DD HH:mm:ss');
         const contact = req.body;
-        console.log(fecha);
         const newContact = {
             id: nanoid_1.nanoid(),
             nombre: contact.nombre,
@@ -40,9 +39,11 @@ const postForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             telefono: contact.telefono,
             fecha,
         };
-        db_1.getConnection().get('contacts').push(newContact).write();
-        // email.sendMail('hbiaser132@gmail.com', 
-        email.sendMail('gerencia@tecnologiamedicacelular.com', { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${contact.email}\nNombre: ${contact.nombre}\nTelefono: ${contact.telefono}\nFecha: ${fecha}` });
+        console.log(newContact);
+        // getConnection().get('contacts').push(newContact).write()
+        email.sendMail('hbiaser132@gmail.com', 
+        // email.sendMail('gerencia@tecnologiamedicacelular.com', 
+        { msjText: `Tiene un nuevo registro de Tecnología Medíca Celular \n\nCorreo: ${contact.email}\nNombre: ${contact.nombre}\nTelefono: ${contact.telefono}\nFecha: ${fecha}` });
         return res.json(newContact);
     }
     catch (error) {
